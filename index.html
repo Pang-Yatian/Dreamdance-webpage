@@ -1,0 +1,303 @@
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript">
+    google.load("jquery", "1.3.2");
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="./resources/style.css" media="screen" />
+
+<html lang="en">
+
+<head>
+    <title>DreamDance</title>
+    <!-- Facebook automatically scrapes this. Go to https://developers.facebook.com/tools/debug/
+          if you update and want to force Facebook to re-scrape. -->
+    <meta property="og:image" content="Path to my teaser.jpg" />
+    <meta property="og:title" content="DreamDance" />
+    <meta property="og:description" content="Paper description." />
+    <!-- Twitter automatically scrapes this. Go to https://cards-dev.twitter.com/validator?
+        if you update and want to force Twitter to re-scrape. -->
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:title" content="DreamDance" />
+    <meta property="twitter:description" content="" />
+    <meta property="twitter:image" content="Path to my teaser.jpg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Add your Google Analytics tag here -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-97476543-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-97476543-1');
+    </script>
+
+    <!-- enable math -->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    <!-- <script>
+        function playVideos() {
+            var videos = document.getElementsByTagName('video');
+            for (var i = 0; i < videos.length; i++) {
+                videos[i].play();
+            }
+        }
+
+        function pauseVideos() {
+            var videos = document.getElementsByTagName('video');
+            for (var i = 0; i < videos.length; i++) {
+                videos[i].pause();
+            }
+        }
+    </script> -->
+    <!-- <style>
+        .new-container {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            margin-left: 75px;
+            /* align-items: center; */
+        }
+        .new-container2 {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            margin-left: 30px;
+            /* align-items: center; */
+        }
+        .new-container3 {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            margin-left: 106px;
+            /* align-items: center; */
+        }
+        .new-container4 {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            margin-left: 60px;
+            /* align-items: center; */
+        } -->
+    <!-- </style> -->
+
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div class="title" display="block">
+            <b>
+                DreamDance: Animating Human Images
+                <br>
+                by Enriching 3D Geometry Cues from 2D Poses
+            </b>
+        </div>
+
+        <br><br>
+        <div class="author">
+            Yatian Pang<sup>1,3</sup>
+        </div>
+        <div class="author">
+            Bin Zhu<sup>1</sup>
+        </div>
+        <div class="author">
+            Bin Lin<sup>1</sup>
+        </div>
+        <div class="author">
+            Mingzhe Zheng<sup>4</sup>
+        </div>
+        <div class="author">
+            Francis E. H. Tay<sup>3</sup>
+        </div>
+        <div class="author">
+            Ser-Nam Lim<sup>5,6</sup>
+        </div>
+        <div class="author">
+            Harry Yang<sup>4,6</sup>
+        </div>
+        <div class="author">
+            Li Yuan</a><sup>1,2,*</sup>
+        </div>
+    
+        <br><br>
+    
+        <div class="affiliation">
+            <!-- <sup>1&nbsp;</sup>National University of Singapore&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<sup>2&nbsp;</sup>Peking University -->
+            <sup>1&nbsp;</sup> Peking University&nbsp;&nbsp;&nbsp;   
+            <sup>2&nbsp;</sup>PengCheng Laboratory&nbsp;&nbsp;&nbsp; 
+            <sup>3&nbsp;</sup>NUS&nbsp;&nbsp;&nbsp; 
+            <sup>4&nbsp;  </sup>HKUST&nbsp;&nbsp;
+            <sup>5&nbsp;  </sup>UCF&nbsp;&nbsp;
+            <sup>6&nbsp;  </sup>Everlyn AI&nbsp;&nbsp;
+        </div>
+
+        <br><br>
+        <div class="links"><a href="https://arxiv.org/abs/xxxx">[Paper]</a></div>
+        <div class="links"><a href="">[Code(Coming Soon)]</a></div>
+        <div class="links"><a href="">[Data(Coming Soon)]</a></div>
+
+        <!-- <div class="links"><a href="https://www.bilibili.com/video/BV1wX4y1p7Ns/?vd_source=fa65719b2d4e7994ab64a631336a3a99#reply360690777">[Video]</a></div> -->
+         
+
+        <!-- <div class="venue">
+            In Conference 20XX
+        </div> -->
+
+        <br><br>
+
+        <h1> Abstract</h1>
+        <p style="width: 80%;text-align: justify">
+            In this work, we present DreamDance, a novel method for animating human images using only skeleton pose sequences as conditional inputs. Existing approaches struggle with generating coherent, high-quality content in an efficient and user-friendly manner. Concretely, baseline methods relying on only 2D pose guidance lack the cues of 3D information, leading to suboptimal results, while methods using 3D representation as guidance achieve higher quality but involve a cumbersome and time-intensive process. To address these limitations, DreamDance enriches 3D geometry cues from 2D poses by introducing an efficient diffusion model, enabling high-quality human image animation with various guidance. Our key insight is that human images naturally exhibit multiple levels of correlation, progressing from coarse skeleton poses to fine-grained geometry cues, and further from these geometry cues to explicit appearance details. Capturing such correlations could enrich the guidance signals, facilitating intra-frame coherency and inter-frame consistency. Specifically, we construct the TikTok-Dance5K dataset, comprising 5K high-quality dance videos with detailed frame annotations, including human pose, depth, and normal maps. Next, we introduce a Mutually Aligned Geometry Diffusion Model to generate fine-grained depth and normal maps for enriched guidance. Finally, a Cross-domain Controller incorporates multi-level guidance to animate human images effectively with a video diffusion model. Extensive experiments demonstrate that our method achieves state-of-the-art performance in animating human images.
+
+        </p> 
+        
+        <!-- <div class="module">
+            <a href="morepage.html" class="sub-module">
+                <div class="content">
+                    <h2>Click Me</h2>
+                    <p>This will take you to another page with more results on the generated normal and depth.</p>
+                </div>
+            </a>
+        </div> -->
+
+        <h1> Method</h1>
+        <div class="img-with-text">
+            <img width="1000" src="./resources/framework.png" />
+        </div>
+        <p style="width: 80%;text-align: justify">
+            Overview of DreamDance framework. The Mutually Aligned Geometry Diffusion Model generates detailed depth and normal maps to enrich guidance signals that are mutually aligned across modalities and time. The Cross-domain Controlled Video Diffusion Model utilizes a cross-domain controller to integrate multiple levels of guidance, producing high-quality human animations.
+        </p> 
+
+        <h1>Experiments</h1>
+
+        <div class="new-container">
+            <!-- <div class="img-with-text">
+                <img width="800" src="./resources/teaser.jpg">
+            </div> -->
+            <div class="video-container">
+                <video muted autoplay="autoplay" loop="loop" width="1000" height="700" controls>
+                    <source src="./resources/more_web.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+        <p style="width: 80%;text-align: justify">
+            We show the pseudo Ground Truth on the last column with the generated results displayed on the penultimate column.
+           </p>
+
+
+        <h1>Cross ID Animation</h1>
+
+        <!-- <h2>Comparison</h2> -->
+        <div class="new-container">
+            <!-- <div class="img-with-text">
+                <img width="800" src="./resources/teaser.jpg">
+            </div> -->
+            <div class="video-container">
+                <video muted autoplay="autoplay" loop="loop" width="1000" height="450" controls>
+                    <source src="./resources/xid_web.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+
+        <div class="module">
+            <a href="morepage.html" class="sub-module">
+                <div class="content">
+                    <h2>Click Me</h2>
+                    <p>This will take you to the page contains the generated normal and depth.</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- <img style="width: 80%;" src="./resources/result2.jpg" alt="Results figure" /> -->
+
+        <br>
+        <hr>
+        <br>
+
+        <h1>Unseen Domain</h1>
+        <div class="new-container">
+            <!-- <div class="img-with-text">
+                <img width="800" src="./resources/teaser.jpg">
+            </div> -->
+            <div class="video-container">
+                <video muted autoplay="autoplay" loop="loop" width="1000" height="900" controls>
+                    <source src="./resources/unseen_web.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+        
+
+
+        <h1>Comparisons with baseline methods</h1>
+        <!-- <p style="width: 80%;text-align: justify">
+            We present 
+        </p> -->
+
+        <!-- <hr> -->
+        <!-- <h1>Motivation</h1> -->
+        <!-- <div class="img-with-text">
+            <img width="800" src="./resources/teaser.jpg" />
+        </div>
+        <br><br> -->
+        <div class="new-container">
+            <!-- <div class="img-with-text">
+                <img width="800" src="./resources/teaser.jpg">
+            </div> -->
+            <div class="video-container">
+                <video muted autoplay="autoplay" loop="loop" width="800" height="400" controls>
+                    <source src="./resources/compare.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+
+        <div class="new-container">
+            <!-- <div class="img-with-text">
+                <img width="800" src="./resources/teaser.jpg">
+            </div> -->
+            <div class="video-container">
+                <video muted autoplay="autoplay" loop="loop" width="800" height="600" controls>
+                    <source src="./resources/compare2.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+
+        <div class="new-container">
+            <!-- <div class="img-with-text">
+                <img width="800" src="./resources/teaser.jpg">
+            </div> -->
+            <div class="video-container">
+                <video muted autoplay="autoplay" loop="loop" width="800" height="600" controls>
+                    <source src="./resources/compare0.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+
+        <div class="new-container">
+            <!-- <div class="img-with-text">
+                <img width="800" src="./resources/teaser.jpg">
+            </div> -->
+            <div class="video-container">
+                <video muted autoplay="autoplay" loop="loop" width="800" height="600" controls>
+                    <source src="./resources/compare1.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+
+
+
+        <!-- <img style="width: 80%;" src="./resources/result4.png" alt="Results figure" /> -->
+
+
+        <br><br>
+    </div>
+
+</body>
+
+</html>
